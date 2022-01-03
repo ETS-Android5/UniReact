@@ -1,3 +1,5 @@
 rootProject.name = 'UniReact'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
+include ':uniReact'
+project(':uniRecat').projectDir=new File('..\\..\\UnityProject\\androidBuild\\unityLibrary')

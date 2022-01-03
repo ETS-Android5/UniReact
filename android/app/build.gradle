@@ -189,6 +189,8 @@ android {
 }
 
 dependencies {
+    implementation project(':uniReact')
+    implementation fileTree(dir: project(':uniReact').getProjectDir().toString() + ('\\libs'), include: ['*.jar'])
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
