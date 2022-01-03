@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets/UniReact/Receiver.cs" />
     <Compile Include="Assets/UniReact/utils.cs" />
-    <Compile Include="Assets/cube.cs" />
+    <Compile Include="Assets/Cube.cs" />
     <Compile Include="Assets/UniReact/Emiter.cs" />
   </ItemGroup>
   <ItemGroup>
