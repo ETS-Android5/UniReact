@@ -18,7 +18,7 @@ id<NativeCallsProtocol> api = NULL;
 //}
 extern "C" {
     void unityToIos(const char* str) {
-        // NSLog(@"Hello, unityToIOS NativeCallProxy!");
+        NSLog(@"Hello, unityToIOS NativeCallProxy!");
         [api unityToIos:[NSString stringWithUTF8String:str]];
      }
 }

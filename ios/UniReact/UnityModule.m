@@ -80,6 +80,9 @@ static UnityModule *sharedInstance;
 
 RCT_EXPORT_METHOD(initialize) {
   sharedInstance =self;
+  [[UnityModule ufw] registerFrameworkListener: sharedInstance];
+    [NSClassFromString(@"FrameworkLibAPI") registerAPIforNativeCalls:sharedInstance];
+
 }
 
 RCT_EXPORT_METHOD(postMessage:(nonnull NSString *)gameObject

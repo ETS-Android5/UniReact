@@ -11,10 +11,7 @@ namespace uniReact
 
     public class Receiver : MonoBehaviour
     {
-#if UNITY_IOS && !UNITY_EDITOR
-        [DllImport("__Internal")]
-        private static extern void onUnityMessage(string message);
-#endif
+
         public static Receiver Instance { get; private set; }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -27,7 +24,7 @@ namespace uniReact
 
         void onRNMessage(string message)
         {
-            //Debug.Log("Manager onRNMessage" + message);
+            Debug.Log("Manager onRNMessage" + message);
             //Debug.Log( message);
             if (message.StartsWith(Constants.MessagePrefix))
             {
@@ -54,19 +51,19 @@ namespace uniReact
                 }
                 return;
             }
-            //Debug.Log("Manager onRNMessage");
+            Debug.Log("Manager onRNMessage");
             if (handler.name == "setXRotation") {
-                GameObject.Find("Cube").GetComponent("cube").SendMessage("setXRotation", handler.getData<string>());
+                GameObject.Find("Cube").GetComponent("Cube").SendMessage("setXRotation", handler.getData<string>());
                 handler.reply("X Rotation set !");
             }
             if (handler.name == "setYRotation")
             {
-                GameObject.Find("Cube").GetComponent("cube").SendMessage("setYRotation", handler.getData<string>());
+                GameObject.Find("Cube").GetComponent("Cube").SendMessage("setYRotation", handler.getData<string>());
                 handler.reply("Y Rotation set !");
             }
             if (handler.name == "setZRotation")
             {
-                GameObject.Find("Cube").GetComponent("cube").SendMessage("setZRotation", handler.getData<string>());
+                GameObject.Find("Cube").GetComponent("Cube").SendMessage("setZRotation", handler.getData<string>());
                 handler.reply("Z Rotation set !");
             }
         }

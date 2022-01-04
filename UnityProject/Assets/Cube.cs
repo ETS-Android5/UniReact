@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using UnityEngine;
 using uniReact;
 
-public class cube : MonoBehaviour
+public class Cube : MonoBehaviour
 {
     private int clickCount = 0;
     private int rotateX = 0;
@@ -36,7 +36,7 @@ public class cube : MonoBehaviour
 
     void OnMouseDown()
     {
-        //Debug.Log("click");
+        Debug.Log("click");
         CurrentColorIndex = (CurrentColorIndex+1) % 5;
         clickCount++;
         GetComponent<Renderer>().material.color = colors[CurrentColorIndex];
@@ -52,11 +52,7 @@ public class cube : MonoBehaviour
             }
         });
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()

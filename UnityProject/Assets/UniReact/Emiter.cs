@@ -25,7 +25,7 @@ namespace uniReact
 
         public void SendMessageToRN(string message)
         {
-            //Debug.Log("SendMessageToRN0" + Application.platform + RuntimePlatform.IPhonePlayer);
+            Debug.Log("SendMessageToRN0" + Application.platform + RuntimePlatform.IPhonePlayer);
             if (Application.platform == RuntimePlatform.Android)
             {
                 using (AndroidJavaClass jc = new AndroidJavaClass("com.unireact.UnityUtils"))
@@ -35,9 +35,9 @@ namespace uniReact
             }
             else if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
-                //Debug.Log("SendMessageToRN");
+                Debug.Log("SendMessageToRN");
 #if UNITY_IOS && !UNITY_EDITOR
- //Debug.Log("SendMessageToRN 2");
+ Debug.Log("SendMessageToRN 2");
                  NativeAPI.unityToIos(message);
 #endif
             }
