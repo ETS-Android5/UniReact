@@ -1,4 +1,4 @@
-package com.samplereactnativeapp;
+package com.unireact;
 
 import android.app.Activity;
 import android.content.Context;

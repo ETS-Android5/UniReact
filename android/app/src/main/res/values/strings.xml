@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">UniReact</string>
+    <string name="app_name">SampleReactNativeApp</string>
+    <string name="game_view_content_description">SampleReactNativeApp</string>
 </resources>

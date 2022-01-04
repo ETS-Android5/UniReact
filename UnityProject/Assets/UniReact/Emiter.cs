@@ -28,7 +28,7 @@ namespace uniReact
             //Debug.Log("SendMessageToRN0" + Application.platform + RuntimePlatform.IPhonePlayer);
             if (Application.platform == RuntimePlatform.Android)
             {
-                using (AndroidJavaClass jc = new AndroidJavaClass("com.samplereactnativeapp.UnityUtils"))
+                using (AndroidJavaClass jc = new AndroidJavaClass("com.unireact.UnityUtils"))
                 {
                     jc.CallStatic("onUnityMessage", message);
                 }

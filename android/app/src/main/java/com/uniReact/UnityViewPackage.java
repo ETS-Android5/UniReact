@@ -1,4 +1,4 @@
-package com.samplereactnativeapp;
+package com.unireact;
 
 
 import com.facebook.react.ReactPackage;
