@@ -18,7 +18,7 @@ public class UnityNativeModule extends ReactContextBaseJavaModule implements Uni
 
     @Override
     public String getName() {
-        return "UnityNativeModule";
+        return "UnityModule";
     }
 
     @ReactMethod

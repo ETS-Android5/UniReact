@@ -118,9 +118,10 @@ copy files :
 - UnityUtils.java
 - UnityView.java
 - UnityViewManager.java
-- UnityViewPackage.
-
+- UnityViewPackage.java
+  
 into android\\app\\src\\main\\java\\com\\samplereactnativeapp
+
 
 # IOS
 open react native ios project with xcode
@@ -136,9 +137,51 @@ set Unity-Iprone/Data folder menbership to UnityFramework
 set Unity-Iprone/Library/Plugins/NativeCallProxy.h visibility to public
  
 ![2.png](img/2.png)
-
+Add UnityFramework in RN project
 ![3.png](img/3.png)
+Remove UnityFramework from Link Binary with libraries
 ![4.png](img/4.png)
+
+copy files :
+
+ - UnityModule.h
+ - UnityModule.m
+ - UnityView.h
+ - UnityView.m
+ - UnityViewManager.h
+ - UnityViewManager.m
+
+into ios/[ProjectName]
+
+AppDelegate.m
+
+```ObjectiveC
+...
+#include <UnityFramework/UnityFramework.h>
+#include <UnityFramework/NativeCallProxy.h>
+#import "UnityModule.h"
+...
+
+- (void)applicationWillResignActive:(UIApplication *)application { [[[UnityModule ufw] appController] applicationWillResignActive: application]; }
+- (void)applicationDidEnterBackground:(UIApplication *)application { [[[UnityModule ufw] appController] applicationDidEnterBackground: application]; }
+- (void)applicationWillEnterForeground:(UIApplication *)application { [[[UnityModule ufw] appController] applicationWillEnterForeground: application]; }
+- (void)applicationDidBecomeActive:(UIApplication *)application { [[[UnityModule ufw] appController] applicationDidBecomeActive: application]; }
+- (void)applicationWillTerminate:(UIApplication *)application { [[[UnityModule ufw] appController] applicationWillTerminate: application]; }
+
+```
+main.m
+
+```ObjectiveC
+...
+@autoreleasepool {
+    [UnityModule setArgc:argc];
+    [UnityModule setArgv:argv];
+    ...
+  }
+...
+```
+
+
 
 # ReactNative
 
@@ -177,7 +220,8 @@ you can call any methode of any gameObject in untity project. the only limitatio
 ```js
 import {unityModule} from '../components/UnityView';
 ...
-unityModule.postMessage('GameObject', methodeName, param);
+unityModule.sendMessage(methodeName,params, callback);
+   
 ```
 
 ## send message from unity to rn

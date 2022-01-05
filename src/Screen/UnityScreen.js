@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 import  {UnityView,
-  unityModule,
+  UnityModule,
 } from '../components/UnityView';
 import Slider from '@react-native-community/slider';
 
@@ -13,7 +13,7 @@ function UnityScreen(props) {
   const [lastUnityMessage, setLastUnityMessage] = useState();
   const handleChange = func => value => {
     // console.log('send', func, value);
-    unityModule.sendMessage(func,`${value}`, (data) => console.log("UNIREACT - Callback in RN :" + data));
+    UnityModule.sendMessage(func,`${value}`, (data) => console.log("UNIREACT - Callback in RN :" + data));
     // else unityModule.callGameObjecttMethod('Cube', func, `${value}`)
     
   };
