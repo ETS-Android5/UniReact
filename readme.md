@@ -123,6 +123,22 @@ copy files :
 into android\\app\\src\\main\\java\\com\\samplereactnativeapp
 
 # IOS
+open react native ios project with xcode
+
+create workspace
+
+add iosBuild/Unity-IPhone.xproj to workspace
+
+set Unity-Iprone/Data folder menbership to UnityFramework
+
+![1.png](img/1.png)
+
+set Unity-Iprone/Library/Plugins/NativeCallProxy.h visibility to public
+ 
+![2.png](img/2.png)
+
+![3.png](img/3.png)
+![4.png](img/4.png)
 
 # ReactNative
 
